@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>meshed_reuleaux_tetrahedron</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2022-10-19"><meta name="DC.source" content="doc.m"><style type="text/css">
+      --><title>mesh_reuleaux_tetrahedron</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2024-10-27"><meta name="DC.source" content="doc.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,44 +66,44 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>meshed_reuleaux_tetrahedron</h1><!--introduction--><p>Function to compute, display, and save a meshed Reuleaux tetrahedron.</p><p>Author &amp; support : nicolas.douillet (at) free.fr, 2017-2022.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">See also</a></li><li><a href="#4">Input arguments</a></li><li><a href="#5">Output arguments</a></li><li><a href="#6">Example #1</a></li><li><a href="#7">Example #2</a></li></ul></div><h2 id="1">Syntax</h2><p>meshed_reuleaux_tetrahedron;</p><p>meshed_reuleaux_tetrahedron(sample_step);</p><p>meshed_reuleaux_tetrahedron(sample_step, option_display);</p><p>[V, T] = meshed_reuleaux_tetrahedron(sample_step, option_display);</p><h2 id="2">Description</h2><p>meshed_reuleaux_tetrahedron computes and displays the meshed Reuleaux tetrahedron included in the unit sphere, and which each edge is sampled in 8.</p><p>meshed_reuleaux_tetrahedron(sample_step) uses sample_step steps.</p><p>meshed_reuleaux_tetrahedron(sample_step, option_display) displays the result when option_display is logical *true/1, and doesn't when it is logical false/0.</p><p>[V, T] = meshed_reuleaux_tetrahedron(sample_step, option_display) stores the resulting vertices coordinates in the array V, and the corresponding triplet indices list in the array T.</p><h2 id="3">See also</h2><p><a href="https://fr.mathworks.com/matlabcentral/fileexchange/64395-sample_triangle">sample_triangle</a> | <a href="https://fr.mathworks.com/help/matlab/ref/mesh.html?s_tid=srchtitle">mesh</a> | <a href="https://fr.mathworks.com/help/matlab/ref/trimesh.html?searchHighlight=trimesh&amp;s_tid=doc_srchtitle">trimesh</a></p><h2 id="4">Input arguments</h2><p>- sample_step : positive integer scalar, power of 2.</p><p>- option_display : logical *true (1) / false (0).</p><h2 id="5">Output arguments</h2><pre>    [ |  |  |]
+  </style></head><body><div class="content"><h1>mesh_reuleaux_tetrahedron</h1><!--introduction--><p>Function to compute, display, and save a mesh Reuleaux tetrahedron.</p><p>Author : nicolas.douillet (at) free.fr, 2017-2024.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">See also</a></li><li><a href="#4">Input arguments</a></li><li><a href="#5">Output arguments</a></li><li><a href="#6">Example #1</a></li><li><a href="#7">Example #2</a></li></ul></div><h2 id="1">Syntax</h2><p>mesh_reuleaux_tetrahedron;</p><p>mesh_reuleaux_tetrahedron(sample_step);</p><p>mesh_reuleaux_tetrahedron(sample_step, option_display);</p><p>[V, T] = mesh_reuleaux_tetrahedron(sample_step, option_display);</p><h2 id="2">Description</h2><p>mesh_reuleaux_tetrahedron computes and displays the mesh Reuleaux tetrahedron included in the unit sphere, and which each edge is sampled in 8.</p><p>mesh_reuleaux_tetrahedron(sample_step) uses sample_step steps.</p><p>mesh_reuleaux_tetrahedron(sample_step, option_display) displays the result when option_display is logical *true/1, and doesn't when it is logical false/0.</p><p>[V, T] = mesh_reuleaux_tetrahedron(sample_step, option_display) stores the resulting vertices coordinates in the array V, and the corresponding triplet indices list in the array T.</p><h2 id="3">See also</h2><p><a href="https://fr.mathworks.com/matlabcentral/fileexchange/64395-sample_triangle">sample_triangle</a> | <a href="https://fr.mathworks.com/help/matlab/ref/mesh.html?s_tid=srchtitle">mesh</a> | <a href="https://fr.mathworks.com/help/matlab/ref/trimesh.html?searchHighlight=trimesh&amp;s_tid=doc_srchtitle">trimesh</a></p><h2 id="4">Input arguments</h2><p>- sample_step : positive integer scalar, power of 2.</p><p>- option_display : logical *true (1) / false (0).</p><h2 id="5">Output arguments</h2><pre>    [ |  |  |]
 - V [Vx Vy Vz] : real matrix double, the point set. Size = [nb_vertices,3].
     [ |  |  |]</pre><pre>    [ |  |  |]
 - T [T1 T2 T3] : positive integer matrix double, the triangulation. Size = [nb_triangles,3].
-    [ |  |  |]</pre><h2 id="6">Example #1</h2><p>Computes and displays the meshed Reuleaux tetrahedron, included in the unit sphere, and which each edge is sampled into 8.</p><pre class="codeinput">meshed_reuleaux_tetrahedron;
-</pre><img vspace="5" hspace="5" src="doc_01.png" alt=""> <h2 id="7">Example #2</h2><p>Computes, displays, and saves a meshed Reuleaux tetrahedron, whom each edge is sampled into 16. Radius size is then increased to 9.</p><pre class="codeinput">[V,T] = meshed_reuleaux_tetrahedron(16,true);
+    [ |  |  |]</pre><h2 id="6">Example #1</h2><p>Computes and displays the mesh Reuleaux tetrahedron, included in the unit sphere, and which each edge is sampled into 8.</p><pre class="codeinput">mesh_reuleaux_tetrahedron;
+</pre><img vspace="5" hspace="5" src="doc_01.png" alt=""> <h2 id="7">Example #2</h2><p>Computes, displays, and saves a mesh Reuleaux tetrahedron, whom each edge is sampled into 16. Radius size is then increased to 9.</p><pre class="codeinput">[V,T] = mesh_reuleaux_tetrahedron(16,true);
 V = 9*V;
 </pre><img vspace="5" hspace="5" src="doc_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-%% meshed_reuleaux_tetrahedron
+%% mesh_reuleaux_tetrahedron
 %
-% Function to compute, display, and save a meshed Reuleaux tetrahedron. 
+% Function to compute, display, and save a mesh Reuleaux tetrahedron. 
 %
-% Author & support : nicolas.douillet (at) free.fr, 2017-2022.
+% Author : nicolas.douillet (at) free.fr, 2017-2024.
 %
 %% Syntax
 %
-% meshed_reuleaux_tetrahedron;
+% mesh_reuleaux_tetrahedron;
 %
-% meshed_reuleaux_tetrahedron(sample_step);
+% mesh_reuleaux_tetrahedron(sample_step);
 %
-% meshed_reuleaux_tetrahedron(sample_step, option_display);
+% mesh_reuleaux_tetrahedron(sample_step, option_display);
 %
-% [V, T] = meshed_reuleaux_tetrahedron(sample_step, option_display);
+% [V, T] = mesh_reuleaux_tetrahedron(sample_step, option_display);
 %
 %% Description
 %
-% meshed_reuleaux_tetrahedron computes and displays the meshed Reuleaux
+% mesh_reuleaux_tetrahedron computes and displays the mesh Reuleaux
 % tetrahedron included in the unit sphere, and which each
 % edge is sampled in 8.
 %
-% meshed_reuleaux_tetrahedron(sample_step) uses sample_step steps.
+% mesh_reuleaux_tetrahedron(sample_step) uses sample_step steps.
 %
-% meshed_reuleaux_tetrahedron(sample_step, option_display)
+% mesh_reuleaux_tetrahedron(sample_step, option_display)
 % displays the result when option_display is logical *true/1, and doesn't when it is
 % logical false/0.
 %
-% [V, T] = meshed_reuleaux_tetrahedron(sample_step, option_display) stores the resulting
+% [V, T] = mesh_reuleaux_tetrahedron(sample_step, option_display) stores the resulting
 % vertices coordinates in the array V, and the corresponding triplet indices list in the array T.
 % 
 %% See also
@@ -129,16 +129,16 @@ V = 9*V;
 %      [ |  |  |]
 %
 %% Example #1
-% Computes and displays the meshed Reuleaux tetrahedron,
+% Computes and displays the mesh Reuleaux tetrahedron,
 % included in the unit sphere, and which each edge is sampled into 8.
 
-meshed_reuleaux_tetrahedron;
+mesh_reuleaux_tetrahedron;
 
 %% Example #2
-% Computes, displays, and saves a meshed Reuleaux tetrahedron,
+% Computes, displays, and saves a mesh Reuleaux tetrahedron,
 % whom each edge is sampled into 16. Radius size is then increased to 9.
 
-[V,T] = meshed_reuleaux_tetrahedron(16,true);
+[V,T] = mesh_reuleaux_tetrahedron(16,true);
 V = 9*V;
 ##### SOURCE END #####
 --></body></html>

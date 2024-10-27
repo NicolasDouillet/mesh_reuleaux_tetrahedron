@@ -1,32 +1,32 @@
-%% meshed_reuleaux_tetrahedron
+%% mesh_reuleaux_tetrahedron
 %
-% Function to compute, display, and save a meshed Reuleaux tetrahedron. 
+% Function to compute, display, and save a mesh Reuleaux tetrahedron. 
 %
 % Author : nicolas.douillet (at) free.fr, 2017-2024.
 %
 %% Syntax
 %
-% meshed_reuleaux_tetrahedron;
+% mesh_reuleaux_tetrahedron;
 %
-% meshed_reuleaux_tetrahedron(sample_step);
+% mesh_reuleaux_tetrahedron(sample_step);
 %
-% meshed_reuleaux_tetrahedron(sample_step, option_display);
+% mesh_reuleaux_tetrahedron(sample_step, option_display);
 %
-% [V, T] = meshed_reuleaux_tetrahedron(sample_step, option_display);
+% [V, T] = mesh_reuleaux_tetrahedron(sample_step, option_display);
 %
 %% Description
 %
-% meshed_reuleaux_tetrahedron computes and displays the meshed Reuleaux
+% mesh_reuleaux_tetrahedron computes and displays the mesh Reuleaux
 % tetrahedron included in the unit sphere, and which each
 % edge is sampled in 8.
 %
-% meshed_reuleaux_tetrahedron(sample_step) uses sample_step steps.
+% mesh_reuleaux_tetrahedron(sample_step) uses sample_step steps.
 %
-% meshed_reuleaux_tetrahedron(sample_step, option_display)
+% mesh_reuleaux_tetrahedron(sample_step, option_display)
 % displays the result when option_display is logical *true/1, and doesn't when it is
 % logical false/0.
 %
-% [V, T] = meshed_reuleaux_tetrahedron(sample_step, option_display) stores the resulting
+% [V, T] = mesh_reuleaux_tetrahedron(sample_step, option_display) stores the resulting
 % vertices coordinates in the array V, and the corresponding triplet indices list in the array T.
 % 
 %% See also
@@ -52,14 +52,14 @@
 %      [ |  |  |]
 %
 %% Example #1
-% Computes and displays the meshed Reuleaux tetrahedron,
+% Computes and displays the mesh Reuleaux tetrahedron,
 % included in the unit sphere, and which each edge is sampled into 8.
 
-meshed_reuleaux_tetrahedron;
+mesh_reuleaux_tetrahedron;
 
 %% Example #2
-% Computes, displays, and saves a meshed Reuleaux tetrahedron,
+% Computes, displays, and saves a mesh Reuleaux tetrahedron,
 % whom each edge is sampled into 16. Radius size is then increased to 9.
 
-[V,T] = meshed_reuleaux_tetrahedron(16,true);
+[V,T] = mesh_reuleaux_tetrahedron(16,true);
 V = 9*V;
