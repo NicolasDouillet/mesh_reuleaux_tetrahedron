@@ -2,6 +2,7 @@ function [V, T] = mesh_reuleaux_tetrahedron(sample_step, option_display)
 %% mesh_reuleaux_tetrahedron : function to compute and display the mesh of a Reuleaux tetrahedron. 
 %
 % Authors : nicolas.douillet (at) free.fr, 2017-2024.
+%           Gerd Wachsmuth,                     2021.
 %
 %
 % Syntax
@@ -60,7 +61,7 @@ function [V, T] = mesh_reuleaux_tetrahedron(sample_step, option_display)
 % Computes, displays, and saves a mesh Reuleaux tetrahedron,
 % which each edge is divided into 8 samples. Radius size is then increased to 9.
 % 
-% [V,T] = mesh_reuleaux_tetrahedron(8,'inflated',true);
+% [V,T] = mesh_reuleaux_tetrahedron(8,true);
 % V = 9*V;
 
 
